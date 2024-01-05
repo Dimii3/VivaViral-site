@@ -54,19 +54,18 @@ li {
 }
 
 .btn-cta {
+  display: inline-block;
   position: relative;
-  font-size: 1.8rem;
   padding: 1rem 3rem;
-  display: inline-block;
-  color: #fff;
-  background-color: #1e1b18;
-  display: inline-block;
-  transition: color 0.3s;
-  border: 1.75px solid #1e1b18;
-  font-family: inherit;
+  font-size: 1.8rem;
   font-weight: 400;
-  z-index: 0;
+  font-family: inherit;
+  color: #fff;
+  border: 1.75px solid #1e1b18;
+  background-color: #1e1b18;
+  transition: color 0.3s;
   overflow: hidden;
+  z-index: 0;
 }
 .btn-cta::after {
   position: absolute;
@@ -147,20 +146,25 @@ li {
   visibility: hidden;
 }
 
+.menu-btn,
+.logo-mobile {
+  display: none;
+}
+
 .nav {
   position: fixed;
   width: 100%;
-  z-index: 99;
   background-color: #fff;
+  z-index: 99;
 }
 .nav .wrapper {
-  max-width: 140rem;
   display: flex;
-  height: 10rem;
-  width: 100%;
-  border-bottom: 1px solid #4a72f5;
   align-items: center;
   justify-content: space-between;
+  height: 10rem;
+  width: 100%;
+  max-width: 140rem;
+  border-bottom: 1px solid #4a72f5;
 }
 .nav .wrapper .nav__logo img {
   width: 10rem;
@@ -176,10 +180,9 @@ li {
   align-items: center;
   justify-content: center;
   height: 100%;
-  justify-self: center;
   padding: 1rem 3rem;
-  background-color: transparent;
   color: #4a72f5;
+  background-color: transparent;
   transition: color 0.3s, background-color 0.3s;
 }
 .nav .wrapper .nav-links__item a:hover, .nav .wrapper .nav-links__item a:active, .nav .wrapper .nav-links__item a:focus {
@@ -442,16 +445,16 @@ li {
   width: 2rem;
 }
 .price-box .price-list .btn-price {
-  border: none;
-  cursor: pointer;
   font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0.5rem;
   margin-left: 2rem;
   margin-top: 1rem;
-  padding: 0.5rem;
-  font-weight: 500;
   background: none;
+  border: none;
   border-bottom: 2px solid #4a72f5;
   transition: color 0.3s;
+  cursor: pointer;
 }
 .price-box .price-list .btn-price:hover, .price-box .price-list .btn-price:active, .price-box .price-list .btn-price:focus {
   color: #4a72f5;
@@ -667,43 +670,6 @@ li {
   transform: translateY(-30px) !important;
 }
 
-.footer {
-  background-color: #1e1b18;
-  color: #fff;
-  padding: 8rem 1rem 3rem 1rem;
-}
-.footer .footer-box {
-  display: flex;
-  justify-content: space-around;
-}
-.footer .footer-box .footer-heading {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-.footer .footer-box .footer-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  font-size: 1.6rem;
-}
-.footer .footer-box .footer-list__item a {
-  color: #fff;
-}
-.footer .footer-box .footer-list__item a:hover {
-  color: #4a72f5;
-}
-.footer .footer-bottom {
-  border-top: 1px solid #fff;
-  margin-top: 8rem;
-  padding-top: 5rem;
-  display: flex;
-  font-size: 1.6rem;
-  justify-content: space-around;
-}
-.footer .footer-bottom__text:nth-child(2) a {
-  color: orange;
-}
-
 @keyframes appearFromLeft {
   0% {
     opacity: 0;
@@ -726,5 +692,262 @@ li {
   100% {
     transform: rotate(360deg);
     box-shadow: 1px 5px 2px #4a72f5;
+  }
+}
+@media (max-width: 1100px) {
+  .about-content {
+    gap: 2rem;
+  }
+  .showcase-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .price-box {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .price-box .price-card {
+    width: 80%;
+  }
+  .reversed .price-card {
+    order: -1;
+  }
+  .info-price {
+    padding: 0 2rem;
+  }
+  .portfolio .portfolio-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 922px) {
+  html {
+    scroll-padding-top: 0;
+  }
+  .menu-btn {
+    display: flex;
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.05);
+    z-index: 101;
+  }
+  .menu-btn__bars {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: rotate(0);
+    transition: transform 1s;
+  }
+  .menu-btn__bars span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #1e1b18;
+    box-shadow: 1px 1px 3px rgba(242, 242, 242, 0.1);
+    border-radius: 2rem;
+    transition: all 0.3s 1s;
+  }
+  .menu-btn__bars span:nth-child(1) {
+    top: 25%;
+    transform: translateY(-25%);
+    width: 60%;
+    left: 0;
+  }
+  .menu-btn__bars span:nth-child(2) {
+    width: 100%;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  .menu-btn__bars span:nth-child(3) {
+    top: 75%;
+    transform: translateY(-75%) rotate(0);
+    right: 0;
+    width: 60%;
+  }
+  .menu-btn.active .menu-btn__bars {
+    transform: rotate(315deg);
+  }
+  .menu-btn.active .menu-btn__bars span:nth-child(2) {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  .menu-btn.active .menu-btn__bars span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  .menu-btn.active .menu-btn__bars span:nth-child(3) {
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%) rotate(90deg);
+  }
+  .nav {
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.4s 1s;
+  }
+  .nav .wrapper {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+  }
+  .nav.active {
+    transform: translateX(0);
+  }
+  .nav .wrapper .nav__logo img {
+    width: 20rem;
+  }
+  .nav .wrapper .nav-links {
+    height: auto;
+  }
+  .nav .wrapper .nav-links__item a {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .nav .wrapper .nav-links {
+    flex-direction: column;
+  }
+  .section {
+    padding: 6rem 2rem;
+  }
+  .contact-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-box .contact-left,
+  .contact-box .contact-right {
+    width: 80%;
+  }
+  .faq .faq-box .faq-item {
+    width: 80%;
+  }
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .banner .banner-left {
+    border: 1px solid #1e1b18;
+  }
+  .banner .banner-left,
+  .banner .banner-right {
+    width: 80%;
+    border-radius: 1rem;
+  }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-content .about-left,
+  .about-content .about-right {
+    width: 80%;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20rem 2rem 2rem 2rem;
+  }
+  .header .header-left,
+  .header .header-right {
+    width: 80%;
+  }
+  .section-description,
+  .section-heading {
+    text-align: center;
+  }
+  .logo-mobile {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+  }
+  .logo-mobile img {
+    width: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-box,
+  .footer .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 5rem;
+  }
+  .showcase-content,
+  .portfolio .portfolio-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .header {
+    padding: 15rem 2rem 2rem 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .about-content .about-right .strategy-list .strategy-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about-content .about-right .strategy-list,
+  .info-price,
+  .contact-box .contact-right .form {
+    padding: 0;
+  }
+  .about-content .about-right .strategy-list .strategy-item__number {
+    align-self: start;
+  }
+  .banner .banner-left,
+  .banner .banner-right {
+    padding: 2rem;
+  }
+  .portfolio,
+  .about {
+    margin: 0;
+  }
+  .price-box {
+    margin: 1rem 0rem;
+  }
+  .banner-left .section-heading {
+    margin-bottom: 2rem;
+  }
+  .banner .banner-right__text {
+    font-size: 2.2rem;
+  }
+  .price-box .price-card {
+    min-height: 40rem;
+    min-width: 100%;
+  }
+  .header .header-left,
+  .header .header-right,
+  .about-content .about-left,
+  .about-content .about-right,
+  .banner .banner-left,
+  .banner .banner-right,
+  .faq .faq-box .faq-item,
+  .contact-box .contact-left,
+  .contact-box .contact-right {
+    width: 100%;
+  }
+  .header .header-left__text {
+    max-width: 100%;
+  }
+  .faq .faq-box {
+    overflow: hidden;
+  }
+  .faq .faq-box .faq-item__question {
+    gap: 2rem;
+  }
+  .nav .wrapper .nav-links__item a {
+    font-size: 2.8rem;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -3,16 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script defer src="https://kit.fontawesome.com/1ddfd708d9.js" crossorigin="anonymous"></script>
+		<meta
+			name="description"
+			content="Specjalizujemy się w skutecznym pozycjonowaniu wizytówek Google, zwiększając widoczność lokalnych firm online. Osiągnij wyższe miejsce w wynikach wyszukiwania i przyciągnij nowych klientów." />
+		<meta
+			name="keywords"
+			content="google reklama, pozycjonowanie stron w google, wizytówka google, pozycjonowanie wizytówki google, google moja firma" />
+		<meta
+			property="og:description"
+			content="Specjalizujemy się w skutecznym pozycjonowaniu wizytówek Google, zwiększając widoczność lokalnych firm online. Osiągnij wyższe miejsce w wynikach wyszukiwania i przyciągnij nowych klientów." />
+		<meta property="og:image" content="/img/logo.png" />
+		<meta
+			property="og:title"
+			content="Google Wizytówka twojej firmy, zrobimy i wypozycjonujemy ją za Ciebie!" />
 		<link rel="icon" type="image/x-icon" href="/img/favico (2).png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap"
 			rel="stylesheet" />
-
 		<title>VivaViral - Digital Marketing</title>
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
 	</head>
 	<body>
 		<div class="preloader">
@@ -23,6 +35,13 @@
 				>
 			</div>
 		</div>
+		<button class="menu-btn" aria-label="Button to handle menu">
+			<div class="menu-btn__bars">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</button>
 		<nav class="nav">
 			<div class="wrapper">
 				<a href="#" class="nav__logo">
@@ -38,6 +57,9 @@
 			</div>
 		</nav>
 		<header class="header">
+			<div class="logo-mobile">
+				<img src="/img/logo.png" alt="logo vivaviral mobile" />
+			</div>
 			<div class="header-left">
 				<h1 class="header-left__heading">
 					Odkryj potencjał Twojej marki <br />
@@ -47,7 +69,7 @@
 					Odkryj potężne strategie marketingowe, które przekształcą Twoją markę w świecie online. Z
 					nami osiągniesz realne rezultaty i zdobędziesz uwagę swojej publiczności.
 				</p>
-				<a href="#" class="header-left__cta btn-cta">Startuj z nami!</a>
+				<a href="#prices" class="header-left__cta btn-cta">Startuj z nami!</a>
 			</div>
 			<div class="header-right">
 				<img src="/img/header-img.png" alt="" class="header-right__img" />
@@ -58,7 +80,11 @@
 				<div class="wrapper">
 					<div class="about-content">
 						<div class="about-left">
-							<img src="/img/about-second-version.png" alt="" class="about-left__img" />
+							<img
+								src="/img/about-second-version.png"
+								alt="pozycjonowanie wizytówki google"
+								class="about-left__img"
+								loading="lazy" />
 						</div>
 						<div class="about-right">
 							<h2 class="section-heading">Jak działamy?</h2>
@@ -239,7 +265,7 @@
 						Nie zwlekaj ani chwili dłużej – zdecyduj się na usługi pozycjonowania wizytówki
 						oferowane przez VivaViral i zwiększ widoczność w sieci!
 					</p>
-					<a href="#" class="banner-cta btn-cta">Dołącz do nas!</a>
+					<a href="#contact" class="banner-cta btn-cta">Dołącz do nas!</a>
 				</div>
 			</section>
 			<section class="section prices" id="prices">
@@ -616,13 +642,16 @@
 				<div class="wrapper">
 					<div class="portfolio-box">
 						<div class="portfolio-item">
-							<img src="/img/portfolio/14170531_392_Digital_marketing_social_media_post_template.jpg" alt="example" loading="lazy">
+							<img
+								src="/img/portfolio/14170531_392_Digital_marketing_social_media_post_template.jpg"
+								alt="example"
+								loading="lazy" />
 						</div>
 						<div class="portfolio-item">
-							<img src="/img/portfolio/29571185_bs_new_004.jpg" alt="example" loading="lazy">
+							<img src="/img/portfolio/29571185_bs_new_004.jpg" alt="example" loading="lazy" />
 						</div>
 						<div class="portfolio-item">
-							<img src="/img/portfolio/34923391_774.jpg" alt="example" loading="lazy">
+							<img src="/img/portfolio/34923391_774.jpg" alt="example" loading="lazy" />
 						</div>
 					</div>
 				</div>
@@ -789,14 +818,14 @@
 							</div>
 						</div>
 						<div class="contact-right">
-							<form action="" class="form">
+							<form action="" class="form" autocomplete="off">
 								<div class="form-container">
 									<input type="text" id="name" />
 									<label for="name" class="simple-label">Wprowadź swoję imię</label>
 								</div>
 								<div class="form-container">
 									<input type="text" id="email" />
-									<label for="email" class="simple-label">Wprowadź swoję imię</label>
+									<label for="email" class="simple-label">Wprowadź swoj adres email</label>
 								</div>
 								<div class="form-container">
 									<input type="text" id="phonenumber" />
@@ -846,8 +875,16 @@
 					<div class="footer-right">
 						<h3 class="footer-heading">Polityka i Regulamin</h3>
 						<ul class="footer-list">
-							<li class="footer-list__item"><a href="#">Polityka prywatności</a></li>
-							<li class="footer-list__item"><a href="#">Regulamin</a></li>
+							<li class="footer-list__item">
+								<a href="https://app.easy.tools/policies/vivaviral-pl" target="_blank"
+									>Polityka prywatności</a
+								>
+							</li>
+							<li class="footer-list__item">
+								<a href="https://app.easy.tools/terms/vivaviral-pl" target="_blank"
+									>Regulamin</a
+								>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -863,6 +900,7 @@
 				</div>
 			</div>
 		</footer>
+		<script src="/js/preloader.js"></script>
 		<script src="/js/main.js"></script>
 	</body>
 </html>

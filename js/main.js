@@ -1,5 +1,10 @@
 'use strict';
+
 const moreInfoPriceBtn = document.querySelectorAll('.btn-price');
+const footerYear = (document.querySelector('.get-year').textContent = new Date().getFullYear());
+const navBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.nav-links__item');
 
 // PRICES
 moreInfoPriceBtn.forEach((btn) => {
@@ -43,13 +48,26 @@ const faqBtns = document.querySelectorAll('.faq-item__question').forEach((faqBtn
 	});
 });
 
-// PRELOADER
-document.body.style.overflow = 'hidden';
-window.addEventListener('load', () => {
-	const preloader = document.querySelector('.preloader');
-	preloader.classList.add('loader-hidden');
-	document.body.style.overflow = 'visible';
-	preloader.addEventListener('transitionend', () => {
-		preloader.remove();
-	});
-});
+// MENU
+let isMenuOpen = false;
+const menuHandler = () => {
+	if (!isMenuOpen) {
+		navBtn.classList.add('active');
+		nav.classList.add('active');
+		document.body.style.overflow = 'hidden';
+		isMenuOpen = true;
+	} else {
+		navBtn.classList.remove('active');
+		nav.classList.remove('active');
+		document.body.style.overflow = 'visible';
+		isMenuOpen = false;
+	}
+};
+
+navBtn.addEventListener('click', menuHandler);
+navLinks.forEach((link) =>
+	link.addEventListener('click', () => {
+		menuHandler();
+		document.body.style.overflow = 'visible';
+	})
+);
