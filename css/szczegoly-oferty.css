@@ -100,9 +100,8 @@ body {
   color: #1e1b18;
 }
 
-.details {
-  padding: 8rem 1rem;
-  margin-top: 8rem;
+section {
+  padding: 20rem 1.5rem 8rem 1.5rem;
 }
 
 .details-list {
@@ -114,6 +113,8 @@ body {
 .details-list__item {
   margin-bottom: 5rem;
   padding-bottom: 2rem;
+}
+.details-list__item:not(:last-child) {
   border-bottom: 1px solid #4a72f5;
 }
 .details-list .details-header {
@@ -124,6 +125,21 @@ body {
 }
 .details-list .details-content {
   font-size: 1.6rem;
+}
+
+.result__heading {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #4a72f5;
+  margin-bottom: 1.5rem;
+}
+
+.result__description {
+  font-size: 1.8rem;
+}
+
+.result__heading.incorrect {
+  color: crimson;
 }
 
 @media (max-width: 576px) {

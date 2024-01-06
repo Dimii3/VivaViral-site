@@ -108,9 +108,8 @@ body {
 	color: $dark-color;
 }
 
-.details {
-	padding: 8rem 1rem;
-	margin-top: 8rem;
+section {
+	padding: 20rem 1.5rem 8rem 1.5rem;
 }
 
 .details-list {
@@ -121,7 +120,9 @@ body {
 	&__item {
 		margin-bottom: 5rem;
 		padding-bottom: 2rem;
-		border-bottom: 1px solid $primary-color;
+		&:not(:last-child) {
+			border-bottom: 1px solid $primary-color;
+		}
 	}
 	.details-header {
 		font-size: 2rem;
@@ -132,6 +133,21 @@ body {
 	.details-content {
 		font-size: 1.6rem;
 	}
+}
+
+.result__heading {
+	font-size: 2rem;
+	font-weight: 400;
+	color: $primary-color;
+	margin-bottom: 1.5rem;
+}
+
+.result__description {
+	font-size: 1.8rem;
+}
+
+.result__heading.incorrect {
+	color: crimson;
 }
 
 @media (max-width: 576px) {

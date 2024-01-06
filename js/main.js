@@ -71,3 +71,41 @@ navLinks.forEach((link) =>
 		document.body.style.overflow = 'visible';
 	})
 );
+
+// FORM
+const inputs = document.querySelectorAll('.form-container input');
+const formSendBtn = document.querySelector('.send-form');
+const validInputs = (input, msg) => {
+	const formContainer = input.parentElement;
+	if (input.value.trim().length < 3) {
+		formContainer.classList.add('error');
+		formContainer.children[2].textContent = `Podany ${msg} jest nieprawidłowy!`;
+	} else {
+		formContainer.classList.remove('error');
+		formContainer.children[2].textContent = ``;
+	}
+};
+
+function validatePhoneNumber(input_str) {
+	const re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{3,6})$/;
+	return re.test(input_str.value);
+}
+
+formSendBtn.addEventListener('click', () => {
+	inputs.forEach((input) => {
+		if (input.id === 'name') {
+			validInputs(input, 'imię');
+		} else if (input.id === 'email') {
+			validInputs(input, 'email');
+		} else if (input.id === 'phonenumber') {
+			const formContainer = input.parentElement;
+			if (!validatePhoneNumber(input)) {
+				formContainer.classList.add('error');
+				formContainer.children[2].textContent = `Podany numer telefonu jest nieprawidłowy!`;
+			} else {
+				formContainer.classList.remove('error');
+				formContainer.children[2].textContent = ``;
+			}
+		}
+	});
+});

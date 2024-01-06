@@ -430,6 +430,12 @@ li {
 			color: $white-color;
 			font-size: 3rem;
 			font-weight: 200;
+			margin-bottom: 1rem;
+		}
+		&__first-payment {
+			color: $white-color;
+			font-size: 1.6rem;
+			
 		}
 		.price-dots {
 			position: absolute;
@@ -640,6 +646,12 @@ li {
 			.form-container {
 				position: relative;
 				margin-bottom: 3.5rem;
+				.error-msg {
+					position: absolute;
+					display: none;
+					transform: translateY(12px);
+					font-size: 1.2rem;
+				}
 				.simple-label {
 					position: absolute;
 					top: 50%;
@@ -652,8 +664,10 @@ li {
 				}
 				input,
 				textarea {
+					font-family: inherit;
 					padding: 1rem;
 					width: 100%;
+					font-size: 1.2rem;
 					display: inline-block;
 					border: none;
 					border-bottom: 2px solid $primary-color;
@@ -672,10 +686,22 @@ li {
 	}
 }
 
-.form-container input:focus ~ .simple-label {
+.form-container input:focus ~ .simple-label,
+.form-container input:valid ~ .simple-label,
+.form-container textarea:focus ~ .label-textarea,
+.form-container textarea:valid ~ .label-textarea {
 	color: $primary-color;
 	font-size: 1.2rem !important;
 	transform: translateY(-30px) !important;
+}
+
+.contact-right .form .form-container.error {
+	input {
+		border-bottom: 2px solid crimson;
+	}
+	.error-msg {
+		display: block;
+	}
 }
 
 .label-textarea {

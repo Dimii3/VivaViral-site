@@ -276,6 +276,7 @@
 						<div class="price-card">
 							<h3 class="price-card__heading">Silver Viva</h3>
 							<p class="price-card__cost">397 zlotych/msc</p>
+							<p class="price-card__first-payment">+ jednorazowo 297 zlotych</p>
 							<div class="price-dots">
 								<img src="/img/dots.png" alt="ikona kropek" loading="lazy" />
 							</div>
@@ -352,6 +353,13 @@
 								Monitorowanie 2 kluczowych fraz
 							</li>
 							<li class="price-list__item">
+								<img
+									src="/img/prices-icons/icons8-tick(1).svg"
+									alt="tic icon"
+									loading="lazy" />
+								Miesięczne raporty
+							</li>
+							<li class="price-list__item">
 								<img src="/img/prices-icons/icons8-x(1).svg" alt="tic icon" loading="lazy" />
 								Dodawanie do katalogów NAP
 							</li>
@@ -365,6 +373,7 @@
 						<div class="price-card">
 							<h3 class="price-card__heading">Gold Viva</h3>
 							<p class="price-card__cost">597 zlotych/msc</p>
+							<p class="price-card__first-payment">+ jednorazowo 247 zlotych</p>
 							<div class="price-dots">
 								<img src="/img/dots.png" alt="ikona kropek" loading="lazy" />
 							</div>
@@ -490,6 +499,7 @@
 						<div class="price-card">
 							<h3 class="price-card__heading">Diamond Viva</h3>
 							<p class="price-card__cost">697 zlotych/msc</p>
+							<p class="price-card__first-payment">+ jednorazowo 197 zlotych</p>
 							<div class="price-dots">
 								<img src="/img/dots.png" alt="ikona kropek" loading="lazy" />
 							</div>
@@ -628,9 +638,10 @@
 					</div>
 					<div class="info-price">
 						<p class="section-description">
-							Rozwiązanie dla właścicieli firm z istniejącą Wizytówką Google. Usługa ta
-							skoncentrowana jest na zmaksymalizowaniu widoczności biznesu, poprzez
-							przeprowadzenie jednorazowych optymalizacji Profilu Firmy Google.
+							Dla właścicieli dużych firm czeka specjalna indywidualna wycena. W związku z
+							unikalnymi potrzebami większych firm, nasze wyceny są indywidualne i oparte na
+							konkretnych oczekiwaniach. Prosimy o kontakt aby lepiej zrozumieć specyfikę
+							Państwa przedsiębiorstwa i dostosować ofertę do Państwa celów.
 						</p>
 						<a href="/szczegoly-oferty.html" class="btn-cta">Sprawdź szczegóły oferty</a>
 					</div>
@@ -797,19 +808,18 @@
 						<div class="contact-left">
 							<h2 class="section-heading">Kontakt</h2>
 							<p class="section-description">
-								Dla właścicieli dużych firm czeka specjalna indywidualna wycena. W związku z
-								unikalnymi potrzebami większych firm, nasze wyceny są indywidualne i oparte na
-								konkretnych oczekiwaniach. Prosimy o kontakt aby lepiej zrozumieć specyfikę
-								Państwa przedsiębiorstwa i dostosować ofertę do Państwa celów.
+								Zaakcentuj swoją obecność online z naszym profesjonalnym pozycjonowaniem wizytówki Google! Zwiększ widoczność, przyciągaj klientów. Jesteśmy gotowi podnieść Twoją firmę na wyższy poziom! 🚀 #PozycjonowanieGoogle #WidocznośćOnline
 							</p>
 							<div class="social-box">
-								<a href="#"
+								<a
+									href="https://www.facebook.com/VivaViralObslugaIPozycjonowanieWizytowkiGoogle/"
+									target="_blank"
 									><img
 										src="/img/contact-icons/facebook_2504903(1).svg"
 										alt="facebook logo"
 										loading="lazy"
 								/></a>
-								<a href="#"
+								<a href="https://www.instagram.com/vivaviral.pl/" target="_blank"
 									><img
 										src="/img/contact-icons/instagram_2111463(1).svg"
 										alt="instagram logo"
@@ -818,24 +828,32 @@
 							</div>
 						</div>
 						<div class="contact-right">
-							<form action="" class="form" autocomplete="off">
+							<form action="./mail.php" method="POST" class="form" autocomplete="off">
 								<div class="form-container">
-									<input type="text" id="name" />
+									<input type="text" name="name" id="name" required pattern="\S+.*" />
 									<label for="name" class="simple-label">Wprowadź swoję imię</label>
+									<small class="error-msg"></small>
 								</div>
 								<div class="form-container">
-									<input type="text" id="email" />
+									<input type="text" name="email" id="email" required pattern="\S+.*" />
 									<label for="email" class="simple-label">Wprowadź swoj adres email</label>
+									<small class="error-msg"></small>
 								</div>
 								<div class="form-container">
-									<input type="text" id="phonenumber" />
+									<input
+										type="tel"
+										id="phonenumber"
+										name="phonenumber"
+										required
+										pattern="\S+.*" />
 									<label for="phonenumber" class="simple-label">Numer telefonu</label>
+									<small class="error-msg"></small>
 								</div>
 								<div class="form-container">
-									<textarea name="message" id="message"></textarea>
-									<label for="message" class="label-textarea">Wiadomość</label>
+									<textarea name="msg" id="msg" required pattern="\S+.*"></textarea>
+									<label for="msg" class="label-textarea">Wiadomość</label>
 								</div>
-								<button class="btn-cta">Wyślij zapytanie</button>
+								<button class="btn-cta send-form">Wyślij zapytanie</button>
 							</form>
 						</div>
 					</div>
@@ -848,8 +866,9 @@
 					<div class="footer-right">
 						<h3 class="footer-heading">Dane kontaktowe</h3>
 						<ul class="footer-list">
-							<li class="footer-list__item">vivaviral@biuro.com</li>
-							<li class="footer-list__item">+48 122 333 999</li>
+							<li class="footer-list__item">kontakt@vivaviral.pl</li>
+							<li class="footer-list__item">biuro@vivaviral.pl</li>
+							<li class="footer-list__item">795 752 965</li>
 						</ul>
 					</div>
 					<div class="footer-middle">

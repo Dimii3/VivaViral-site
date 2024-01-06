@@ -419,6 +419,11 @@ li {
   color: #fff;
   font-size: 3rem;
   font-weight: 200;
+  margin-bottom: 1rem;
+}
+.price-box .price-card__first-payment {
+  color: #fff;
+  font-size: 1.6rem;
 }
 .price-box .price-card .price-dots {
   position: absolute;
@@ -619,6 +624,12 @@ li {
   position: relative;
   margin-bottom: 3.5rem;
 }
+.contact-box .contact-right .form .form-container .error-msg {
+  position: absolute;
+  display: none;
+  transform: translateY(12px);
+  font-size: 1.2rem;
+}
 .contact-box .contact-right .form .form-container .simple-label {
   position: absolute;
   top: 50%;
@@ -631,8 +642,10 @@ li {
 }
 .contact-box .contact-right .form .form-container input,
 .contact-box .contact-right .form .form-container textarea {
+  font-family: inherit;
   padding: 1rem;
   width: 100%;
+  font-size: 1.2rem;
   display: inline-block;
   border: none;
   border-bottom: 2px solid #4a72f5;
@@ -647,10 +660,20 @@ li {
   outline: none;
 }
 
-.form-container input:focus ~ .simple-label {
+.form-container input:focus ~ .simple-label,
+.form-container input:valid ~ .simple-label,
+.form-container textarea:focus ~ .label-textarea,
+.form-container textarea:valid ~ .label-textarea {
   color: #4a72f5;
   font-size: 1.2rem !important;
   transform: translateY(-30px) !important;
+}
+
+.contact-right .form .form-container.error input {
+  border-bottom: 2px solid crimson;
+}
+.contact-right .form .form-container.error .error-msg {
+  display: block;
 }
 
 .label-textarea {
